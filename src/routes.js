@@ -129,27 +129,17 @@ function onImageFileSent(file, config) {
 
 function sendImageInResponse(res, config, options) {
     return (file, err) => {
-        console.log('file before'.file);
-        console.log('err before'.err);
-        console.log('options before'.options);
-        
         if (err) {
-            console.log('res on error'.res);
             sendError(res, badCapturing(options.url));
         } else {
-           console.log('file after'.file);
-           console.log('err after'.err);
-           console.log('config after'.config.cors);
-           console.log('res after'.res);
-            
             if (config.cors) {
                 enableCORS(res);
             }
             res.sendFile(file, (err) => {
                 if (err) {
-                    console.log('file internal'.file);
-                    console.log('err internal'.err);
-                    console.log('res internal'.res);
+                    console.log('err internal'+err.message);
+                    console.log('file internal'+file);
+                    console.log('res internal'+res);
                     sendError(res, 'Error while sending image file: ' + err.message);
                 }
                 onImageFileSent(file, config);
