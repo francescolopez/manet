@@ -198,7 +198,7 @@ function index(config) {
             }catch(err) {
                 siteUrl = options.url;
             }
-            console.log('siteUrl'.siteUrl);     
+            
             if (!isUrlAllowed(config, siteUrl)) {
                 sendError(res, util.format('URL "%s" is not allowed', siteUrl));
             } else {
