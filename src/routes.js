@@ -137,9 +137,6 @@ function sendImageInResponse(res, config, options) {
             }
             res.sendFile(file, (err) => {
                 if (err) {
-                    console.log('err internal'+err.message);
-                    console.log('file internal'+file);
-                    console.log('res internal'+res);
                     sendError(res, 'Error while sending image file: ' + err.message);
                 }
                 onImageFileSent(file, config);
