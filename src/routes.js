@@ -205,8 +205,6 @@ function index(config) {
             try {
                 siteUrl =atob(options.url);
                 options.url = siteUrl;
-                console.log(siteUrl);
-                console.log(options.url);
             }catch(err) {
                 siteUrl = options.url;
             }
