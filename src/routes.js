@@ -202,14 +202,9 @@ function index(config) {
         } else {
             const options = readOptions(data.value, schema);
             var siteUrl = options.url;
-            console.log(siteUrl);
             try {
-                console.log(options.url);
                 siteUrl =atob(options.url);
-                console.log(atob(options.url));
-                console.log(siteUrl);
             }catch(err) {
-                console.log(err);
                 siteUrl = options.url;
             }
             
