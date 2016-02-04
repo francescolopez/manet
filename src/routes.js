@@ -204,8 +204,8 @@ function index(config) {
             var siteUrl = options.url;
             try {
                 siteUrl =atob(options.url);
-                console.log(siteUrl)
-                console.log(options.url)
+                console.log(siteUrl);
+                console.log(options.url);
             }catch(err) {
                 siteUrl = options.url;
             }
