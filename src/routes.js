@@ -180,6 +180,16 @@ function sendImageToUrl(res, config, options) {
 }
 
 
+ global.atob = function(string) { 
+            var buf = new Buffer(string, "base64"); 
+            var bytes = []; 
+            for ( var i = buf.length; i >= 0; i-- ) { 
+                bytes[i] = String.fromCharCode(buf[i]); 
+            } 
+ 
+            return bytes.join(""); 
+}; 
+
 /* Controller */
 
 function index(config) {
