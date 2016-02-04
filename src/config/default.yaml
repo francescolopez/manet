@@ -10,7 +10,7 @@ level: info
 engine: phantomjs
 timeout: 60000
 compress: false
-cache: 3600
+cache: 2678400
 cleanupStartup: false
 cleanupRuntime: false
 
