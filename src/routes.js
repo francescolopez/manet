@@ -202,7 +202,14 @@ function index(config) {
         } else {
             const options = readOptions(data.value, schema);
             var siteUrl = options.url;
-            
+            try {
+                siteUrl =atob(options.url);
+                options.url = siteUrl;
+                console.log(siteUrl);
+                console.log(options.url);
+            }catch(err) {
+                siteUrl = options.url;
+            }
             
             if (!isUrlAllowed(config, siteUrl)) {
                 sendError(res, util.format('URL "%s" is not allowed', siteUrl));
